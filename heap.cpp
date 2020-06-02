@@ -14,7 +14,7 @@ void Heap::push(int value){
     std::vector<int>::iterator i = vdata.begin();
     for(i; i != vdata.end(); i++){
       if(*i > value){
-        vdata.insert(i - 1, value);
+        vdata.insert(i, value);
         return;
       }
     }
