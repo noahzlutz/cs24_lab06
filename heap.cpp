@@ -34,12 +34,8 @@ void Heap::pop(){
 
 // Returns the minimum element in the heap
 int Heap::top(){
-  if(!vdata.empty()){
-    std::vector<int>::iterator i = vdata.begin();
-    return *i;
-  }else{
-    return;
-  }
+  std::vector<int>::iterator i = vdata.begin();
+  return *i;
 }
 
 // Returns true if the heap is empty, false otherwise
