@@ -1,4 +1,4 @@
-all: heap examheap
+all: examheap
 
 heap.o: heap.cpp heap.h
 	g++ heap.cpp -c 
@@ -10,4 +10,4 @@ examheap: heap.o examheap.o
 	g++ heap.o examheap.o -o examheap
 
 clean:
-	rm examheap heap examheap.o heap.o
+	rm examheap examheap.o heap.o
