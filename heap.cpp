@@ -12,9 +12,15 @@ void Heap::push(int value){
     vdata.push_back(value);
   }else{
     std::vector<int>::iterator i = vdata.begin();
-    for(i; *i < value; i++);
-    vdata.insert(i, value);
+    for(i; i != vdata.end(); i++){
+      if(*i > value){
+        vdata.insert(i - 1, value);
+        return;
+      }
+    }
+    vdata.push_back(value);
   }
+  
 }
 
 // Pops the minimum value off the heap
@@ -29,8 +35,10 @@ void Heap::pop(){
 
 // Returns the minimum element in the heap
 int Heap::top(){
-  std::vector<int>::iterator i = vdata.begin();
-  return *i;
+  if(!vdata.empty()){
+    std::vector<int>::iterator i = vdata.begin();
+    return *i;
+  }
 }
 
 // Returns true if the heap is empty, false otherwise
