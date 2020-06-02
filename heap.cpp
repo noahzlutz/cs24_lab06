@@ -20,7 +20,6 @@ void Heap::push(int value){
     }
     vdata.push_back(value);
   }
-  
 }
 
 // Pops the minimum value off the heap
@@ -38,6 +37,8 @@ int Heap::top(){
   if(!vdata.empty()){
     std::vector<int>::iterator i = vdata.begin();
     return *i;
+  }else{
+    return;
   }
 }
 
